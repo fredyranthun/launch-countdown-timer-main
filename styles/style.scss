@@ -1,0 +1,176 @@
+@import "_reset";
+
+@mixin semi-circle($side) {
+    content: '';
+    width: 8px;
+    height: 16px;
+    background-color:white;
+    @if $side == "left" {
+        border-radius: 0 8px 8px 0;
+        margin-left: 0;
+    } @else {
+        border-radius: 8px 0 0 8px;
+        margin-right: 0;
+    }   
+}
+
+@mixin flexBox($direction, $content, $items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+}
+
+// variables;
+$paddingBlock: 10px;
+$blockWidth: 200px;
+
+//  Primary Colors;
+$grayishBlue: hsl(237, 18%, 59%);
+$softRed: hsla(345, 95%, 68%, 0.7);
+//  Neutral Colors;
+$white: hsl(0, 0%, 100%);
+$darkDesaturatedBlue: hsl(236, 21%, 26%);
+$veryDarkBlue: hsl(235, 16%, 14%);
+$veryDarkBlackBlue: hsl(234, 17%, 12%);
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 700;
+    background-color: $veryDarkBlackBlue;
+    background-image: URL("../images/pattern-hills.svg"), URL("../images/bg-stars.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain , contain;
+    background-position: bottom, top;
+    @include flexBox(column, space-between, center);
+    padding-top: 100px;
+    padding-bottom: 15px;
+}
+
+.block-header {
+    font-family: 'Red Hat Text', sans-serif;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    letter-spacing: 14px;
+    text-shadow: 1px 1px 2px RGBA(0,0,0,0.4);
+    padding: 0 1em;
+}
+
+.block-icon {
+    @include flexBox(row, space-between , center );
+    width: 10%;
+    min-width: 90px;
+    justify-self: flex-end;
+
+    a {
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus > svg   {
+            fill: $softRed;          
+        }
+
+    }
+}
+svg {
+
+    fill: $grayishBlue;
+    cursor: pointer;
+    &:hover, &:focus {
+        fill: $softRed;
+    }
+}
+
+.tick {
+    font-size: 1em;
+    white-space: nowrap;
+    font-family: 'Red Hat Text', sans-serif;
+
+    &-flip, &-text-inline {
+        font-size: 7em;
+    }
+
+    &-label {
+        margin-top: 2em;
+        letter-spacing: 0.6em;
+        text-transform: uppercase;
+        color: $grayishBlue;
+    }
+
+    &-char {
+        width: 1.5em;
+    }
+
+    &-text-inline {
+        display: inline-block;
+        text-align: center;
+        min-width: 1.5em;
+        color: $softRed !important;
+    }
+
+    &-flip-panel {
+        color: $softRed !important;
+        background-color: $veryDarkBlue;
+        
+        text-align: center;
+    }
+    &-group {
+        margin: 0.5em;
+        text-align: center;
+        
+    }
+    &-flip {
+        border-radius: 0.1em !important;
+        width: 2em;
+        text-align: center;
+        letter-spacing: 0;
+        text-indent: 0;
+    }
+
+    &-flip-shadow {
+        box-shadow: 0 10px 1em #000;
+    }
+}
+
+
+.block-attribution {
+    font-size: 11px;
+    justify-self: flex-end;
+    a {
+        color: hsl(228, 45%, 44%);
+        &:focus {
+            outline: 2px solid $veryDarkBlackBlue;
+            color: $grayishBlue;
+        }
+    }
+}
+
+@mixin responsiveBox($width, $size) {
+    @media screen and (max-width: $width) {
+        .tick-flip {
+            font-size: $size;
+        }
+        .tick {
+            font-size: $size / 7;
+        }
+        .block-header {
+            font-size: $size * 0.22;
+        }
+    }
+}
+
+@include responsiveBox(1000px, 6em);
+@include responsiveBox(800px, 5.5em);
+@include responsiveBox(650px, 5em);
+@include responsiveBox(520px, 4.5em);
+@include responsiveBox(440px, 4em);
+@include responsiveBox(350px, 3.7em);

@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+[remote "origin"]
+	url = /mnt/c/Users/Fredy/workspace/webdev/Front_end_mentor/launch-countdown-timer-main/.git
