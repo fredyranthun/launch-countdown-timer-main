@@ -1,0 +1,270 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 700;
+  background-color: #191a24;
+  background-image: URL("../images/pattern-hills.svg"), URL("../images/bg-stars.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain , contain;
+  background-position: bottom, top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 100px;
+  padding-bottom: 15px;
+}
+
+.block-header {
+  font-family: 'Red Hat Text', sans-serif;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  letter-spacing: 14px;
+  text-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.4);
+  padding: 0 1em;
+}
+
+.block-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+  min-width: 90px;
+  justify-self: flex-end;
+}
+
+.block-icon a:focus {
+  outline: none;
+}
+
+.block-icon a:focus > svg {
+  fill: rgba(251, 96, 135, 0.7);
+}
+
+svg {
+  fill: #8486a9;
+  cursor: pointer;
+}
+
+svg:hover, svg:focus {
+  fill: rgba(251, 96, 135, 0.7);
+}
+
+.tick {
+  font-size: 1em;
+  white-space: nowrap;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.tick-flip, .tick-text-inline {
+  font-size: 7em;
+}
+
+.tick-label {
+  margin-top: 2em;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: #8486a9;
+}
+
+.tick-char {
+  width: 1.5em;
+}
+
+.tick-text-inline {
+  display: inline-block;
+  text-align: center;
+  min-width: 1.5em;
+  color: rgba(251, 96, 135, 0.7) !important;
+}
+
+.tick-flip-panel {
+  color: rgba(251, 96, 135, 0.7) !important;
+  background-color: #1e1f29;
+  text-align: center;
+}
+
+.tick-group {
+  margin: 0.5em;
+  text-align: center;
+}
+
+.tick-flip {
+  border-radius: 0.1em !important;
+  width: 2em;
+  text-align: center;
+  letter-spacing: 0;
+  text-indent: 0;
+}
+
+.tick-flip-shadow {
+  -webkit-box-shadow: 0 10px 1em #000;
+          box-shadow: 0 10px 1em #000;
+}
+
+.block-attribution {
+  font-size: 11px;
+  justify-self: flex-end;
+}
+
+.block-attribution a {
+  color: #3e52a3;
+}
+
+.block-attribution a:focus {
+  outline: 2px solid #191a24;
+  color: #8486a9;
+}
+
+@media screen and (max-width: 1000px) {
+  .tick-flip {
+    font-size: 6em;
+  }
+  .tick {
+    font-size: 0.85714em;
+  }
+  .block-header {
+    font-size: 1.32em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tick-flip {
+    font-size: 5.5em;
+  }
+  .tick {
+    font-size: 0.78571em;
+  }
+  .block-header {
+    font-size: 1.21em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .tick-flip {
+    font-size: 5em;
+  }
+  .tick {
+    font-size: 0.71429em;
+  }
+  .block-header {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .tick-flip {
+    font-size: 4.5em;
+  }
+  .tick {
+    font-size: 0.64286em;
+  }
+  .block-header {
+    font-size: 0.99em;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .tick-flip {
+    font-size: 4em;
+  }
+  .tick {
+    font-size: 0.57143em;
+  }
+  .block-header {
+    font-size: 0.88em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .tick-flip {
+    font-size: 3.7em;
+  }
+  .tick {
+    font-size: 0.52857em;
+  }
+  .block-header {
+    font-size: 0.814em;
+  }
+}
+/*# sourceMappingURL=style.css.map */
